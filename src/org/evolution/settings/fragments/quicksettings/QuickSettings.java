@@ -49,6 +49,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_PANEL_STYLE = "qs_panel_style";
     private static final String KEY_QS_SHOW_MEDIA_PLAYER = "qs_show_media_player";
     private static final String KEY_QS_TILE_ALTERNATE_COLOR = "qs_tile_alternate_color";
+    private static final String KEY_QS_COLOR_POP = "qs_color_pop";
     private static final String KEY_QS_TILE_HAPTIC = "qs_tile_haptic";
     private static final String KEY_QS_TILE_ICON_SHAPE = "qs_tile_icon_shape";
     private static final String KEY_QS_TILE_LABEL_HIDE = "qs_tile_label_hide";
@@ -71,6 +72,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SecureSettingListPreference mQsShowMediaPlayer;
     private SwitchPreferenceCompat mBrightnessSliderHaptic;
     private SwitchPreferenceCompat mQsTileAlternateColor;
+    private SwitchPreferenceCompat mQsColorPop;
     private SwitchPreferenceCompat mQsTileHaptic;
     private SwitchPreferenceCompat mQsTileLabelHide;
     private SwitchPreferenceCompat mShowAutoBrightness;
@@ -142,6 +144,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsTileAlternateColor = findPreference(KEY_QS_TILE_ALTERNATE_COLOR);
         mQsTileAlternateColor.setOnPreferenceChangeListener(this);
 
+        mQsColorPop = findPreference(KEY_QS_COLOR_POP);
+        mQsColorPop.setOnPreferenceChangeListener(this);
+
         mQsPanelStyle = findPreference(KEY_QS_PANEL_STYLE);
         mQsPanelStyle.setOnPreferenceChangeListener(this);
         mQsTileShape = findPreference(KEY_QS_TILE_SHAPE);
@@ -193,7 +198,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 || preference == mBrightnessSliderHaptic
                 || preference == mQsShowMediaPlayer
                 || preference == mSingleQsToneEnabled
-                || preference == mQsTileAlternateColor) {
+                || preference == mQsTileAlternateColor
+                || preference == mQsColorPop) {
             SystemUtils.showSystemUiRestartDialog(getActivity());
             return true;
         }

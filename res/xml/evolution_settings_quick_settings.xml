@@ -33,6 +33,13 @@
             android:summary="@string/qs_tile_alternate_color_summary"
             android:defaultValue="false" />
 
+        <!-- QS Color Pop tile style -->
+        <org.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_color_pop"
+            android:title="@string/quick_settings_panel_style_color_pop"
+            android:summary="@string/qs_color_pop_summary"
+            android:defaultValue="false" />
+
         <org.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_bg_alternate_color"
             android:title="@string/notification_bg_alternate_color_title"
